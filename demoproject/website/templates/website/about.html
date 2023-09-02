@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О Нас</title>
+</head>
+<body>
+    <h1> About us</h1>
+    <p> We are wonderful team! </p>
+
+    <h3> Наши Адреса: </h3>
+    <ul>
+        
+    </ul>
+
+    <table>
+        <tr>
+            <th>Филиал</th>
+            <th>Адресс:</th>
+        </tr>
+        {% for filialName, address in addresses.items %}
+            <tr>
+                <td>{{ filialName}}</td>
+                <td>{{ address}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

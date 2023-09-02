@@ -3,22 +3,34 @@ from django.http import HttpResponse
 
 def index(request):
     name = "Askar"
+    title = "Домашняя страница"
+    age = 10
+    list_pages = ['О Нас', 'Контакты', 'Логин', 'Выход']
     
-    html_code = f"<h1> Hello World! {name}</h1>"\
-        "<p> Some code in HTML!! </p>" \
-        "<b> New changes </b>"
     
-    return HttpResponse(html_code)
-    
-def about_us(index):
-    html_code = "<h1> About us</h1>"\
-        "<p> We are wonderful team! </p>" 
-    
-    return HttpResponse(html_code)
+    context = {
+        'nametemp': name, 
+        'titlenews': title, 
+        'pages': list_pages, 
+        'age': age}
+    #return render(request, 'website/index.html', context={'nametemp': name, 'titlenews': title, 'pages': list_pages, 'age': age})
+    return render(request, 'website/index.html', context)
 
-
-def contact_us(index):
-    html_code = "<h1> Contact us</h1>"\
-        "<p> We are wonderful team! </p>" 
+def about_us(request):
+    addresses = {
+        'filial 1': 'Чуй 123',
+        'filial 2': 'Чуй 66',
+        'filial 3': 'Чуй 45',
+    }
     
-    return HttpResponse(html_code)
+    context = {
+        'addresses': addresses,
+    }
+    
+    
+    
+    return render(request, 'website/about.html', context)
+
+def contact_us(request):
+    return render(request, 'website/contact.html')
+    

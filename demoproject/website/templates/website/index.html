@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ titlenews }}</title>
+    <style rel="stylesheet"  type="text/css" href="{% static 'css/style.css' %}"></style>
+</head>
+<body>
+    <h1> Hello World from Templates files</h1>
+        <p><b>Hello my friend <u> <p style="font-size: 45px; color:aquamarine;"> {{ nametemp }} </p> </u></b>
+        <p> Some code in HTML!! </p>
+        <b> New changes </b>
+    <h2> New line </h2>
+
+    <h3>Pages: </h3>
+    <ol>
+        {% for page in pages %}
+            <li>{{ page }}</li>
+        {% endfor %}
+    </ol>
+
+    
+    {% if age is 10 %}
+        Вы на правильном пути
+    {% else %}
+        Вы не на правильном пути
+    {% endif %}
+
+</body>
+</html>
